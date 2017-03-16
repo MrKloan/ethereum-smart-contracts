@@ -1,7 +1,7 @@
 const SimpleStorage = artifacts.require("./SimpleStorage.sol");
 
-contract('SimpleStorage', function(accounts) {
-	it("should store the value 100", function() {
+contract('SimpleStorage', accounts => {
+	it("should store the value 100", () => {
 		let storage;
 
 		return SimpleStorage.deployed()
@@ -9,7 +9,7 @@ contract('SimpleStorage', function(accounts) {
 				storage = _storage;
 				storage.set(100, {from: accounts[0]})
 			})
-			.then(_ => storage.get.call(accounts[0]))
+			.then(() => storage.get.call(accounts[0]))
 			.then(data => assert.equal(data, 100, "100 wasn't stored in the contract"));
 	});
 });
