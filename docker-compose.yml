@@ -1,0 +1,10 @@
+version: "2"
+services:
+  ethereum:
+    image: mrkloan/ethereum-dev:latest
+    container_name: eth
+    volumes:
+      - .:/src
+    ports:
+      - 8545:8545
+    command: testrpc
