@@ -5,5 +5,5 @@ const Ballot = artifacts.require('./Ballot.sol');
 module.exports = function(deployer) {
 	deployer.deploy(SimpleStorage);
 	deployer.deploy(Coin);
-	deployer.deploy(Ballot);
+	deployer.deploy(Ballot, ["Proposal 1", "Proposal 2", "Proposal 3"]);
 };
